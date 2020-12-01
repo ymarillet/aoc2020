@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Finder\Finder;
+
+$app = new Application();
+/** @var Finder|\SplFileInfo[] $finder */
+$finder = Finder::create();
+$finder->files()->in(__DIR__ . '/../src/Command');
+foreach ($finder as $file) {
+    $class = '\Ymarillet\AOC2020\Command\\' . $file->getBasename('.php');
+    $app->add(new $class);
+}
+$app->run();

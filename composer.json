@@ -1,0 +1,16 @@
+{
+    "name": "ymarillet/aoc2020",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "webmozart/assert": "^1.6 | ^2.0",
+        "symfony/console": "^5.2",
+        "symfony/finder": "^5.0",
+        "guzzlehttp/psr7": "^1.6 | ^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ymarillet\\AOC2020\\": "src/"
+        }
+    }
+}

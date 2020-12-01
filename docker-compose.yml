@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  aoc-php:
+    restart: "no"
+    image: php:7-fpm
+    volumes:
+    - ./:/src:rw
+    - $SSH_AUTH_SOCK:/tmp/agent.sock
+    working_dir: /src
+    environment:
+    - SSH_AUTH_SOCK=/tmp/agent.sock
